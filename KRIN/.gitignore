@@ -1,0 +1,14 @@
+# Credentials and sensitive files
+*.keys.json
+resources/credentials/
+gcp-oauth.keys.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+*~
