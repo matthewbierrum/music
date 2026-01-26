@@ -23,6 +23,34 @@
             line-height: 1.7;
         }
         
+        /* Fixed Top Nav */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+            border-bottom: 1px solid #222;
+        }
+        
+        .top-nav a {
+            color: #ccc;
+            font-size: 1.2rem;
+            transition: color 0.2s ease;
+        }
+        
+        .top-nav a:hover {
+            color: #e94560;
+            text-decoration: none;
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -210,6 +238,19 @@
     </style>
 </head>
 <body>
+    <!-- Fixed Top Nav -->
+    <nav class="top-nav">
+        <a href="https://www.instagram.com/themagicpennies/" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/themagicpennies/" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://themagicpennies.bandcamp.com/" target="_blank" title="Bandcamp">
+            <i class="fa-brands fa-bandcamp"></i>
+        </a>
+    </nav>
+    
     <!-- Hero Section -->
     <div class="hero">
         <img src="magic-pennies-logo-white.svg" alt="The Magic Pennies" class="logo">
@@ -302,17 +343,6 @@
             <h2>Contact</h2>
             <div class="contact-info">
                 <p style="text-align: left;"><strong>Booking & Press:</strong> <a href="mailto:themagicpennies@gmail.com">themagicpennies@gmail.com</a></p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/themagicpennies/" target="_blank" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i> Instagram
-                    </a>
-                    <a href="https://www.facebook.com/themagicpennies/" target="_blank" title="Facebook">
-                        <i class="fa-brands fa-facebook"></i> Facebook
-                    </a>
-                    <a href="https://themagicpennies.bandcamp.com/" target="_blank" title="Bandcamp">
-                        <i class="fa-brands fa-bandcamp"></i> Bandcamp
-                    </a>
-                </div>
             </div>
         </section>
         
