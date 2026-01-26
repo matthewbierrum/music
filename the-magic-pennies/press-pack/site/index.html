@@ -204,6 +204,17 @@
             border-radius: 4px;
         }
         
+        /* Fix rotation for Matt Stratocaster image */
+        .photo-grid img.rotate-fix {
+            transform: rotate(-90deg);
+        }
+        
+        @media (max-width: 768px) {
+            .photo-grid img.rotate-fix {
+                transform: rotate(90deg);
+            }
+        }
+        
         /* Contact */
         .contact-info {
             background: #1a1a1a;
@@ -304,7 +315,7 @@
                     <img src="photos/thumbs/flood-launch.webp" alt="The Flood single launch" loading="lazy">
                 </a>
                 <a href="photos/Matt%20tunes%20his%20Stratocaster..JPG" target="_blank">
-                    <img src="photos/thumbs/Matt-tunes-his-Stratocaster.webp" alt="Matt tunes his Stratocaster" loading="lazy">
+                    <img src="photos/thumbs/Matt-tunes-his-Stratocaster.webp" alt="Matt tunes his Stratocaster" loading="lazy" class="rotate-fix">
                 </a>
                 <a href="photos/georgie%20wide.png" target="_blank">
                     <img src="photos/thumbs/georgie-wide.webp" alt="Georgie" loading="lazy">
