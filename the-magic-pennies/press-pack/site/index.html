@@ -5,69 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Magic Pennies - EPK</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #1a1a2e;
-            background-image: url('pennies_homepage_bg.png');
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: auto 100vh;
-            background-attachment: fixed;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0a0a0a;
             color: #eee;
         }
-        .spacer {
-            height: 50vh;
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-image: url('background-image-wide.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
         }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            position: relative;
+            z-index: 1;
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+        }
+        
+        .hero h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            color: #fff;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            z-index: 1;
+            color: #fff;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Content Sections */
         .content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
-            background: rgba(26, 26, 46, 0.9);
+            padding: 4rem 2rem;
         }
-        h1 { color: #fff; border-bottom: 2px solid #e94560; padding-bottom: 0.5rem; margin-top: 0; }
-        h2 { color: #e94560; margin-top: 2rem; }
-        a { color: #0f9b8e; }
-        hr { border: none; border-top: 1px solid #333; margin: 2rem 0; }
-        .footer { text-align: center; color: #666; margin-top: 3rem; }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e94560;
+        }
+        
+        p {
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Music Section */
+        .music-embed {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Photos Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .photo-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        /* Contact */
+        .contact-info {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
     </style>
 </head>
 <body>
-    <div class="spacer"></div>
-    <div class="content">
-    <h1>The Magic Pennies</h1>
-    <h2>Electronic Press Kit</h2>
-    
-    <p>Welcome to The Magic Pennies press kit. Here you'll find everything you need for press, booking, and promotion.</p>
-    
-    <hr>
-    
-    <h2>Quick Links</h2>
-    <ul>
-        <li><strong>Bio</strong> — Band biography (coming soon)</li>
-        <li><strong>Photos</strong> — Press photos (coming soon)</li>
-        <li><strong>Contact</strong> — Booking & press inquiries</li>
-    </ul>
-    
-    <hr>
-    
-    <h2>Bio</h2>
-    <p><em>Coming soon — full band biography</em></p>
-    
-    <hr>
-    
-    <h2>Photos</h2>
-    <p><em>Coming soon — high-resolution press photos</em></p>
-    
-    <hr>
-    
-    <h2>Contact</h2>
-    <p>For booking and press inquiries, please get in touch.</p>
-    
-    <hr>
-    
-    <p class="footer">© 2026 The Magic Pennies</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="magic-pennies-logo-white.svg" alt="The Magic Pennies" class="logo">
+        <h2>Electronic Press Kit</h2>
+        <div class="scroll-indicator">↓ Scroll</div>
     </div>
+    
+    <!-- Main Content -->
+    <div class="content">
+        
+        <!-- Bio Section -->
+        <section id="bio">
+            <h2>Bio</h2>
+            <p><em>Coming soon — band biography</em></p>
+        </section>
+        
+        <!-- Music Section -->
+        <section id="music">
+            <h2>Music</h2>
+            <div class="music-embed">
+                <p><em>Coming soon — embedded music player</em></p>
+            </div>
+        </section>
+        
+        <!-- Video Section -->
+        <section id="video">
+            <h2>Video</h2>
+            <div class="music-embed">
+                <p><em>Coming soon — music videos and live performances</em></p>
+            </div>
+        </section>
+        
+        <!-- Photos Section -->
+        <section id="photos">
+            <h2>Press Photos</h2>
+            <p><em>Coming soon — high-resolution press photos</em></p>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Booking:</strong> <em>Coming soon</em></p>
+                <p><strong>Press:</strong> <em>Coming soon</em></p>
+                <div class="social-links">
+                    <a href="#">Spotify</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <footer>
+        © 2026 The Magic Pennies
+    </footer>
 </body>
 </html>
