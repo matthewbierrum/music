@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Magic Pennies - EPK</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,9 +16,11 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Libre Baskerville', Georgia, serif;
             background-color: #0a0a0a;
             color: #eee;
+            font-size: 16px;
+            line-height: 1.7;
         }
         
         /* Hero Section */
@@ -91,17 +96,28 @@
         }
         
         h2 {
+            font-family: 'Righteous', cursive;
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 2.4rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #e94560;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        
+        h3 {
+            font-family: 'Righteous', cursive;
+            color: #e94560;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
         }
         
         p {
-            line-height: 1.8;
+            line-height: 1.9;
             color: #ccc;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
         }
         
         a {
@@ -206,26 +222,6 @@
             <h2>Bio</h2>
             <p>A jangly blend of psych, garage, surf and country soundscapes.</p>
             <p>Based in Manchester, the 5 piece band enjoys a reputation for raucous live shows.</p>
-            
-            <div class="press-quotes">
-                <h3 style="color: #e94560; margin-bottom: 1rem;">Press</h3>
-                <div class="press-quote">
-                    <p>"The harmony and rhythmic foundation create an atmosphere I love"</p>
-                    <span class="source">— Rolling Stone (Pablo Monroy)</span>
-                </div>
-                <div class="press-quote">
-                    <p>"Literally My Favourite Band"</p>
-                    <span class="source">— DIO Music (Jess Coulson)</span>
-                </div>
-                <div class="press-quote">
-                    <p>"Makes the listener feel transported into a truly mind-bending state"</p>
-                    <span class="source">— Dark Impala Magazine</span>
-                </div>
-                <div class="press-quote">
-                    <p>"I really like the way they bring back rustic and psychedelic elements"</p>
-                    <span class="source">— ROCKNBOLD</span>
-                </div>
-            </div>
         </section>
         
         <!-- Music Section -->
@@ -272,6 +268,29 @@
                 <a href="photos/matt-is-weird.jpg" target="_blank">
                     <img src="photos/matt-is-weird.jpg" alt="Matt">
                 </a>
+            </div>
+        </section>
+        
+        <!-- Press Section -->
+        <section id="press">
+            <h2>Press</h2>
+            <div class="press-quotes">
+                <div class="press-quote">
+                    <p>"The harmony and rhythmic foundation create an atmosphere I love"</p>
+                    <span class="source">— Rolling Stone (Pablo Monroy)</span>
+                </div>
+                <div class="press-quote">
+                    <p>"Literally My Favourite Band"</p>
+                    <span class="source">— DIO Music (Jess Coulson)</span>
+                </div>
+                <div class="press-quote">
+                    <p>"Makes the listener feel transported into a truly mind-bending state"</p>
+                    <span class="source">— Dark Impala Magazine</span>
+                </div>
+                <div class="press-quote">
+                    <p>"I really like the way they bring back rustic and psychedelic elements"</p>
+                    <span class="source">— ROCKNBOLD</span>
+                </div>
             </div>
         </section>
         
