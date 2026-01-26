@@ -1,8 +1,3 @@
----
-layout: home
-title: Electronic Press Kit
----
-
 # The Magic Pennies
 
 ## Electronic Press Kit
