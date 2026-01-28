@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRIN - EPK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            background-color: #0a0a0a;
+            color: #eee;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Fixed Top Nav */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .top-nav a {
+            color: #ccc;
+            font-size: 1.2rem;
+            transition: color 0.2s ease;
+        }
+        
+        .top-nav a:hover {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-image: url('b-w-banner.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            position: relative;
+            z-index: 1;
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+        }
+        
+        .hero h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            color: #fff;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            z-index: 1;
+            color: #fff;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Content Sections */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-family: 'Righteous', cursive;
+            color: #fff;
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        
+        h3 {
+            font-family: 'Righteous', cursive;
+            color: #d4af37;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+        }
+        
+        p {
+            line-height: 1.9;
+            color: #ccc;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        
+        a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Music Section */
+        .music-embed {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Press Quotes */
+        .press-quotes {
+            margin-top: 2rem;
+        }
+        
+        .press-quote {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-left: 3px solid #d4af37;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .press-quote p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: #eee;
+        }
+        
+        .press-quote .source {
+            font-style: normal;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        /* Photos Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .photo-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        /* Contact */
+        .contact-info {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Top Nav -->
+    <nav class="top-nav">
+        <a href="https://www.instagram.com/krinkulture/?hl=en" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/krinkulture/?locale=en_GB" target="_blank" title="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://open.spotify.com/artist/1SseNzdIZLcsDlf5CHKUDn" target="_blank" title="Spotify">
+            <i class="fa-brands fa-spotify"></i>
+        </a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="krin-logo-transparent.png" alt="KRIN" class="logo">
+        <h2>Electronic Press Kit</h2>
+        <div class="scroll-indicator">↓ Scroll</div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="content">
+        
+        <!-- Bio Section -->
+        <section id="bio">
+            <h2>Bio</h2>
+            <p>KRIN is...</p>
+            <!-- Add your bio here -->
+        </section>
+        
+        <!-- Music Section -->
+        <section id="music">
+            <h2>Music</h2>
+            <div class="music-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2uuv2YsyLyPfAyeHKJu1ak?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </section>
+        
+        <!-- Video Section -->
+        <section id="video">
+            <h2>Video</h2>
+            <div class="music-embed">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Cyw8mAIq8sY" title="KRIN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <!-- Photos Section -->
+        <section id="photos">
+            <h2>Images</h2>
+            <p>High-resolution photos available for press use. Click to view full size.</p>
+            <div class="photo-grid">
+                <a href="photos/AAA-big-crowd-shot.jpg" target="_blank">
+                    <img src="photos/AAA-big-crowd-shot.jpg" alt="KRIN crowd shot" loading="lazy">
+                </a>
+                <a href="photos/AAA-javi-karim.jpg" target="_blank">
+                    <img src="photos/AAA-javi-karim.jpg" alt="Javi and Karim" loading="lazy">
+                </a>
+                <a href="photos/cover-image-krin.JPG" target="_blank">
+                    <img src="photos/cover-image-krin.JPG" alt="KRIN" loading="lazy">
+                </a>
+                <a href="photos/greenislandkarim.jpg" target="_blank">
+                    <img src="photos/greenislandkarim.jpg" alt="Karim at Green Island" loading="lazy">
+                </a>
+                <a href="photos/karim-bt-3.jpg" target="_blank">
+                    <img src="photos/karim-bt-3.jpg" alt="Karim at Boomtown" loading="lazy">
+                </a>
+                <a href="photos/karim-matt-javi-green-island.jpg" target="_blank">
+                    <img src="photos/karim-matt-javi-green-island.jpg" alt="Karim, Matt, and Javi at Green Island" loading="lazy">
+                </a>
+                <a href="photos/KrinBoomtown2.jpg" target="_blank">
+                    <img src="photos/KrinBoomtown2.jpg" alt="KRIN at Boomtown" loading="lazy">
+                </a>
+                <a href="photos/MattBoomtown1.jpg" target="_blank">
+                    <img src="photos/MattBoomtown1.jpg" alt="Matt at Boomtown" loading="lazy">
+                </a>
+                <a href="photos/matt_javi_boomtown.jpg" target="_blank">
+                    <img src="photos/matt_javi_boomtown.jpg" alt="Matt and Javi at Boomtown" loading="lazy">
+                </a>
+            </div>
+        </section>
+        
+        <!-- Press Section -->
+        <section id="press">
+            <h2>Press</h2>
+            <div class="press-quotes">
+                <!-- Add press quotes here -->
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p style="text-align: left;"><strong>Booking & Press:</strong> <a href="mailto:krinkulture@gmail.com">krinkulture@gmail.com</a></p>
+            </div>
+        </section>
+        
+    </div>
+    
+    <footer>
+        © 2026 KRIN
+    </footer>
+</body>
+</html>

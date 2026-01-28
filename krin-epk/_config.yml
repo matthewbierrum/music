@@ -1,0 +1,16 @@
+title: KRIN - EPK
+description: Electronic Press Kit for KRIN
+baseurl: "/music/krin-epk"
+url: "https://matthewbierrum.github.io"
+
+theme: minima
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
