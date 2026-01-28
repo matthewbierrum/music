@@ -29,10 +29,17 @@ jobs:
         with:
           enablement: true
 
+      - name: Prepare combined site
+        run: |
+          mkdir -p _site
+          cp -r the-magic-pennies/press-pack/site/* _site/
+          mkdir -p _site/krin-epk
+          cp -r krin-epk/* _site/krin-epk/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: the-magic-pennies/press-pack/site
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
